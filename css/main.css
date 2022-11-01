@@ -1,0 +1,333 @@
+:root {
+    --vrHue: 290;
+    --textHue: 198;
+    --twoDHue: 40;
+}
+
+.vrButton {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--vrHue), 100%, 50%, 1);
+}
+
+.vrButton:hover {
+    background: hsla(var(--vrHue), 100%, 80%, 1);;
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.vrButton-selected {
+    background: hsla(var(--vrHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.vrButton-selected:hover {
+    border: 1px solid lightgray;
+}
+
+.textButton {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--textHue), 100%, 50%, 1);
+}
+
+.textButton:hover {
+    background: hsla(var(--textHue), 100%, 80%, 1);
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.textButton-selected {
+    background: hsla(var(--textHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.textButton-selected:hover {
+    border: 1px solid lightgray;
+}
+
+.twoDButton {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--twoDHue), 100%, 50%, 1);
+}
+
+.twoDButton:hover {
+    background: hsla(var(--twoDHue), 100%, 80%, 1);
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.twoDButton-selected {
+    background: hsla(var(--twoDHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.twoDButton-selected:hover {
+    border: 1px solid lightgray;
+}
+
+
+
+.vrButtonDarker {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--vrHue), 100%, 50%, 1);
+}
+
+.vrButtonDarker:hover {
+    background: hsla(var(--vrHue), 100%, 80%, 1);;
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.vrButtonDarker-selected {
+    background: hsla(var(--vrHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.vrButtonDarker-selected:hover {
+    border: 1px solid lightgray;
+}
+
+.textButtonDarker {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--textHue), 40%, 50%, 1);
+}
+
+.textButtonDarker:hover {
+    background: hsla(var(--textHue), 100%, 80%, 1);
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.textButtonDarker-selected {
+    background: hsla(var(--textHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.textButtonDarker-selected:hover {
+    border: 1px solid lightgray;
+}
+
+.twoDButtonDarker {
+    background: white;
+    border: 1px solid lightgray;
+    color: hsla(var(--twoDHue), 40%, 50%, 1);
+}
+
+.twoDButtonDarker:hover {
+    background: hsla(var(--twoDHue), 100%, 80%, 1);
+    border: 1px solid lightgray;
+    color: black;
+}
+
+.twoDButtonDarker-selected {
+    background: hsla(var(--twoDHue), 100%, 50%, 1);
+    border: 1px solid lightgray;
+    color: white;
+}
+
+.twoDButtonDarker-selected:hover {
+    border: 1px solid lightgray;
+}
+
+.task {
+    position: relative;
+}
+
+.taskCheckBox {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    display: inline-block;
+    position: absolute;
+}
+
+.taskCheckBox:hover {
+    background: hsla(var(--base-hue), 100%, 80%, 1);
+    cursor: pointer;
+}
+
+.taskCheckBox-checked {
+    width: 50px;
+    height: 50px;
+    background: hsla(var(--base-hue), 0%, 30%, 1);
+    border: 1px solid lightgray;
+    border-radius: 14px;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.taskCheckBoxSmall {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+}
+
+.taskCheckBoxSmall:hover {
+    background: hsla(var(--base-hue), 100%, 80%, 1);
+    cursor: pointer;
+}
+
+.taskCheckBoxSmall-checked {
+    width: 26px;
+    height: 26px;
+    background: hsla(var(--base-hue), 0%, 30%, 1);
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    /* display: inline-block; */
+    /* position: absolute; */
+    cursor: pointer;
+}
+
+
+
+.taskDetails {
+    display: inline-block;
+    width: calc(100% - 60px);
+    position: relative;
+    left: 50px;
+}
+
+.taskInfo {
+    font-family: Nunito;
+}
+.taskTitle {
+    font-family: Raleway;
+}
+
+.xMark:hover {
+    color: red;
+}
+
+
+.participantClock {
+    color: grey;
+    font-size: 40px;
+}
+
+/* From https://loading.io/css/ */
+
+
+.loading-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.loading-ripple div {
+    position: absolute;
+    border: 4px solid hsla(190, 100%, 50%, 1);
+    opacity: 1;
+    border-radius: 50%;
+    animation: loading-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loading-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes loading-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+
+.loading-ripple-small {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.loading-ripple-small div {
+    position: absolute;
+    border: 1px solid hsla(190, 0%, 50%, 1);
+    opacity: 1;
+    border-radius: 50%;
+    animation: loading-ripple-small 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loading-ripple-small div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes loading-ripple-small {
+    0% {
+        top: 9px;
+        left: 9px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+    }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+
+	
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+	
+
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width: 526px) {
+
+
+}
+
+@media screen and (min-width: 100px) and (max-width: 400px) {
+    .taskCheckBox {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+
+
+

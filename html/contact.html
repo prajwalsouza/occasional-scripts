@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="../css/parts/contact.css">
+<div class="theSlide" id="contactDetailsSlide">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" id="contactUsName">CONTACT</div>
+        </div>
+        <div class="row">
+            <div class="pt-4 pt-lg-0 col-12 col-sm-6" ng-if="contact.phoneNumber != '' || contact.email  != '' || contact.placeName != ''">
+                <div ng-if="contact.placeName != ''" class="locationName">{{contact.placeName}}</div>
+                <div ng-if="contact.phoneNumber != '' || contact.email  != ''" class="locationContact">{{contact.phoneNumber}}<br ng-if="contact.phoneNumber != ''"/>{{contact.email}}</div>
+            </div>
+            <div ng-if="contact.addressLine1 != '' || contact.addressLine2 != ''" class="pt-4 pt-lg-0 col-12 col-sm-6" id="addressContainer">
+                <span><i class="fa fa-map-marker" id="locationBalloon"></i></span>
+                <span style="margin-left: 20px;">{{contact.addressLine1}} <br/> {{contact.addressLine2}}</span>
+            </div>
+        </div>
+        <div ng-if="contact.socialMedia.length > 0" class="row" id="socialMedia" >
+            <div class="col-12">
+                <a ng-repeat="social in contact.socialMedia" style="color: white; margin-right: 10px;" target="_blank" href="{{social[1]}}"><i class="fa {{social[0]}}"></i></a>
+            </div>
+        </div>
+        <div ng-if="copyright" class="row" id="copyright">
+            <div class="col-12" style="color: hsla(0, 0%, 55%, 1);">
+                {{copyright}}
+            </div>
+        </div>
+    </div>
+</div>

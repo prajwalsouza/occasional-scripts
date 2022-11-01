@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="theMainController" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speed Dating</title>
+
+    <base href="/" target="_blank">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="css/generic.css">
+    <link rel="stylesheet" type="text/css" href="css/ignus-theme.css">
+    <script src="js/ignus-theme.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.min.js"></script>
+
+    <link rel="icon" href="assets/logo/logo.svg">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103589215-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-103589215-3');
+    </script> -->
+
+    <script type="application/ld+json">
+        {
+        "@type": "Web app",
+        "name": "Experiment Assistant",
+        "author": "Daniel, Zampeta and Prajwal",
+        "description": "Help handle the experiment protocols."
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Help handle the experiment protocols.">
+    <meta name="keywords" content="experiment assistant">
+    <meta name="author" content="Daniel, Zampeta and Prajwal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script> -->
+
+
+    
+</head>
+<body>
+    <main id="mainContainer">
+        <div class="p-3">
+            <div style="background: white; position: fixed;">
+                <button class="btn-ignus btn-light-primary-ignus" ng-click="generateNewGroups();">Generate Meeting Groups</button>
+                <button class="btn-ignus btn-light-primary-ignus ml-4" ng-click="tweakGroups();" ng-show="numOfGroups != 0">Change</button>
+            </div>
+
+            <div class="pt-5"></div>
+           
+            <div class="mt-4 text-ignus ml-4" ng-show="numOfGroups != 0">
+                <div class="mb-3">
+                    <b>Instructions</b>
+                    <div>Human Subject Number and their meeting point.</div>
+                </div>
+                
+                <div class="d-inline-flex"  ng-repeat="(participantKey, participantData) in potentialParticipant" ng-show="participantData['status'] == 'present'">
+                    <div>
+                        <div class="text-ignus text-large-ignus mr-4 pb-2 pt-3 pl-3 pr-5 mb-4" style="border-radius: 12px; border: 1px solid hsl(0, 0%, 90%);" >
+                            <b style="font-size: 20px;">{{participantKey}} </b><br>
+                            <span style="font-size: 30px;">
+                                <font class="text-grey-ignus" >meets at </font><b>{{participantData['group'] + 1}}</b>
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="numOfGroups != 0" style="min-height: 800px; width: 100%;" ></div>
+            <div ng-show="numOfGroups != 0">
+                <div class="mt-5">
+                    <b>Meeting Points</b>
+                </div>
+                
+                <div class="d-inline-flex"  ng-repeat="(groupKey, groupData) in groups">
+                    <div>
+                        <div class="text-ignus text-large-ignus mr-4 pb-2 pt-3 pl-3 pr-5 mb-4" >
+                            <b style="font-size: 15px;">Meeting Point {{parseInt(groupKey) + 1}} </b><br>
+                            
+                            <span ng-repeat="member in groupData['members']" class="p-2 mr-3"  style="font-size: 17px; " >
+                                <b>{{member}}</b>
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+            <div style="min-height: 800px; width: 100%;"></div>
+            <div class="mt-4 mb-4">
+                <button class="btn-ignus btn-light-{{markPresence ? 'primary':'dark'}}-ignus" ng-click="markPresence = !markPresence;">Mark Presence</button>
+
+            </div>
+            <div class="mt-4"  ng-show="markPresence">
+                <div class="d-inline-flex"  ng-repeat="(participantKey, participantData) in potentialParticipant">
+                    <div>
+                        <div class="btn-ignus" ng-click="participantData['status'] == 'present' ? participantData['status'] = 'absent' : participantData['status'] = 'present'">
+                            No {{participantKey}} : <font style="color:{{participantData['status'] == 'present'? 'black':'red'}}">{{participantData['status']}}</font>
+                        </div>
+        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </main>
+
+    <script>
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+            }
+    </script>
+
+
+    <script src="js/maincontroller.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <audio id="notificationMusic" src="audio/notification.mp3"></audio>
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+#contactDetailsSlide {
+	background: black;
+	height: auto;
+	padding: 40px;
+	overflow-x: hidden;
+	color: white;
+	font-family: Nunito;
+	padding-top: 60px;
+	padding-bottom: 100px;
+}
+
+
+#contactUsName {
+	font-family: Raleway;
+	font-weight: bold;
+	font-size: 23px;
+	margin-bottom: 50px;
+	margin-top: 20px;
+}
+
+.locationName {
+	font-size: 19px;
+	color: hsla(0, 0%, 55%, 1);
+}
+
+.locationContact {
+	font-size: 19px;
+	font-weight: bold;
+}
+
+#addressContainer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+    margin-top: 5px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+#socialMedia {
+	font-size: 24px;
+	letter-spacing: 5px;
+	margin-top: 30px; margin-bottom: 30px;
+}
+
+#locationBalloon {
+    font-size: 40px; color: grey;
+}
+
+#copyright {
+    font-size: 14px;
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media screen and (max-width: 576px) {
+
+    #contactUsName {
+        font-size: 17px;
+        margin-bottom: 11px;
+        margin-top: 14px;
+    }
+
+
+    .locationName {
+        font-size: 15px;
+    }
+
+    .locationContact {
+        font-size: 14px;
+    }
+
+    #addressContainer {
+        font-size: 13px;
+        margin-bottom: 2px;
+        margin-top: 19px;
+    }
+
+    #locationBalloon {
+        font-size: 30px;
+    }
+
+    #socialMedia {
+        font-size: 20px;
+    }
+
+    #copyright {
+        font-size: 13px;
+    }
+
+        
+
+}
+
+
+@media screen and (min-width: 400px) and (max-width: 526px) {
+
+
+}
+
+@media screen and (min-width: 200px) and (max-width: 400px) {
+
+}
+
+
+

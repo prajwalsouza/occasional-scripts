@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="theHead col-5 col-md-4">
+            <span class="logoHolder" ng-include="logo"></span>
+            <span class="appName d-none d-sm-inline-flex">E<span class="d-none d-md-inline-block">xperiment</span>&nbspAssist</span>
+        </div>
+        
+        <nav id="theMainMenu" class="offset-0 col-7 offset-md-0 col-md-8">
+            <span id="profileAndMenuHolder" class="ml-3">
+                <h6 ng-show="user.state == 'logged-in' "class="btn-ignus btn-light-primary-ignus mr-3" ng-click="signOut()"><b>Log out</b></h6>
+                <div ng-show="user.state == 'logged-in'" class="profile-photo-small-ignus" style="background-image: {{user.profilePicture == '' ? '' : 'url(\'' + user.profilePicture + '\')'}}; background-size: cover; background-position: center;">
+                    <div class="photoCover"></div>
+                </div>
+                <h6 ng-click="visitInternally('/')" ng-show="user.state != 'logged-in' "class="btn-ignus btn-light-primary-ignus mr-3" >Log in</h6>
+            </span>
+        </nav>
+    </div>
+</div>

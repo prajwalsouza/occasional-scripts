@@ -1,0 +1,160 @@
+body {
+	background-color: hsla(198, 0%, 100%, 1);
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+	font-family: Nunito;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px 10px hsla(198, 100%, 90%, 1);
+	box-shadow: inset 0 0 0px 10px hsla(198, 100%, 90%, 1);
+    background-color: hsla(198, 100%, 50%, 0);
+    border-radius: 30px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: hsla(198, 100%, 0%, 1);
+    border-radius: 50px;
+}
+
+
+/* header css start */
+
+
+.theHead {
+	height: 90px;
+	display: inline-flex;
+	cursor: pointer;
+	
+}
+
+#theHeader, #theNav {
+	/* background: white; */
+	position: relative;
+}
+
+#theNav {
+	padding-bottom: 15px;
+}
+
+.logoHolder {
+	height: 100%;
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 10px;
+	filter: hue-rotate(var(--base-hue-in-deg))
+}
+
+.logoHolderInner {
+    width: 42px;
+	filter: hue-rotate(-180deg);
+}
+
+
+.appName {
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100%;
+	margin-left: 7px;
+	font-family: Raleway;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#theMainMenu {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#profileAndMenuHolder {
+	display: inline-flex;
+	align-items: center;
+}
+
+#menuHolder {
+	display: inline-flex;
+	height: 90px;
+}
+
+.menuOption {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 40px;
+	padding-left: 40px;
+	font-family: Raleway;
+	color: black;
+}
+
+.menuOption:hover {
+	font-weight: bold;
+	cursor: pointer;
+	color: black;
+}
+
+#splashScreen {
+	position: fixed;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	background: hsla(0, 100%, 100%, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#splashBox {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+	background-color: hsla(var(--base-hue), 100%, 50%, 1);
+	border-radius: 10px;
+    /* margin:-60px 0 0 -60px; */
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#fullErrorScreen {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	background: hsla(0, 100%, 100%, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#theMainView {
+	min-height: 500px;
+}
+
+#signInOptions {
+	min-height: 400px;
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+
+
+
+
+@media screen and (max-width: 576px) {
+	
+}
+
+/* header css end */
